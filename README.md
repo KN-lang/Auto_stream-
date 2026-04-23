@@ -36,7 +36,7 @@ User Message
 | Layer | Technology |
 |---|---|
 | Agent Orchestration | LangGraph 0.2+ |
-| LLM | Gemini 1.5 Flash |
+| LLM | Gemini 1.5 Flash | Groq Llama 3.3 70B|
 | Embeddings | Google `models/embedding-001` |
 | Vector Store | ChromaDB (persistent) |
 | Session Persistence | LangGraph SqliteSaver |
@@ -84,6 +84,7 @@ pip install -r requirements.txt
 ```bash
 cp .env.example .env
 # Edit .env and add your GOOGLE_API_KEY
+# if you see the option fro Groq_API_KEY then , it means i have changed the api 
 ```
 
 ### 3. Run the CLI demo
@@ -159,7 +160,7 @@ FastAPI (/webhook)          ← phone number used as thread_id
 LangGraph Agent             ← loads state from SQLite by thread_id
   │
   ├── ChromaDB (RAG)
-  └── Gemini 1.5 Flash
+  └── Gemini 1.5 Flash / Groq 
   │
   ▼
 Response text
